@@ -16,6 +16,6 @@ exports.editCrud = async (req, res) => {
 };
 
 exports.deleteCrud = async (req, res) => {
-  await Crud.findByIdAndDelete(req.params.id);
+  await Crud.findOneAndDelete({ _id: req.params.id });
   res.sendStatus(204);
 };
